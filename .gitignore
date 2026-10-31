@@ -34,7 +34,7 @@
 *.lib
 
 # Executables
-*.exe
+# 不删除 EXE
 *.out
 *.app
 
