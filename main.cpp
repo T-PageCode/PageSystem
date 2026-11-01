@@ -7,14 +7,14 @@ using namespace std;
 int main() {
     // System first code
     cout << "========" << endl;
-    cout << "PageSystem V1.0.2" << endl;
+    cout << "PageSystem V1.0.3" << endl;
     string command;
     // Command
     while (true) {
         cout << ">>> ";
         getline(cin, command);
         if (command == "info") {
-            cout << "System info:\nSystem name: PageSystem\nVersion: 1.0.2\nCopyright 2026 T-PageCode." << endl;
+            cout << "System info:\nSystem name: PageSystem\nVersion: 1.0.3\nCopyright 2026 T-PageCode." << endl;
         }
         else if (command == "exit") {
             break;
@@ -56,6 +56,18 @@ int main() {
             else {
                 cout << "Created file: " << '"' << filename << '"' << "." << endl;
             }
+        }
+        else if (command == "download") {
+            string downloadfilename;
+            cout << "File name: ";
+            getline(cin, downloadfilename);
+            if (downloadfilename.empty()) {
+                downloadfilename = "downloaded.untitled";
+            }
+            string downloadurl;
+            cout << "URL: ";
+            getline(cin, downloadurl);
+            system(("curl -s -L -o " + downloadfilename + " " + downloadurl).c_str());
         }
         else {
             cout << "Not found command: " << command << endl;
