@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>PageSystem 终端</title>
+    <style>
+        body{
+            background-color: rgb(230,220,210);
+        }
+        *{
+            font-family: Georgia, "SimSun", "宋体", serif;
+            text-align: center;
+            user-select: none;
+        }
+        button{
+            position: absolute;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 40px;
+            border-radius: 10px;
+            border: none;
+            font-size: 20px;
+            background-color: rgb(220,210,200);
+            border: 1px solid rgb(190,180,170);
+            box-shadow: -10px 10px 10px rgba(0,0,0,0.4);
+            overflow: hidden;
+        }
+        button:hover::before{
+            opacity: 1;
+            transform: translateX(-50%) scale(8);
+        }
+        button::before{
+            position: absolute;
+            left: 50%;
+            top: 0px;
+            transform: translateX(-50%);
+            background-color: rgb(200,190,180);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            content: "";
+            text-align: center;
+            line-height: 40px;
+            opacity: 0;
+            z-index: -1;
+            transition: transform 0.5s ease,
+            opacity 0.2s ease;
+        }
+    </style>
+</head>
+<body>
+    <h1><i>PageSystem</i> 终端</h1>
+    <button onclick="window.open('https://github.com/T-PageCode/PageSystem/releases/latest/download/PageSystem.exe','download')">下载</button>
+    <script>
+        document.addEventListener("contextmenu",(e) => {
+            e.preventDefault();
+        })
+    </script>
+</body>
+</html>
