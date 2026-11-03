@@ -43,14 +43,35 @@
             line-height: 40px;
             opacity: 0;
             z-index: -1;
-            transition: transform 0.5s ease,
+            transition: transform 0.3s ease,
             opacity 0.2s ease;
+        }
+        div{
+            position: absolute;
+            top: 200px;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            background-color: rgb(210,200,190);
+            width: 350px;
+            height: 100px;
+            line-height: 20px;
+            border-radius: 10px;
+            transition: background-color 0.3s ease;
+            box-shadow: -10px 10px 10px rgba(0,0,0,0.4),
+            inset 0px 0px 20px rgba(0,0,0,0.4);
+        }
+        div:hover{
+            background-color: rgb(190,180,170)
         }
     </style>
 </head>
 <body>
     <h1><i>PageSystem</i> 终端</h1>
     <button onclick="window.open('https://github.com/T-PageCode/PageSystem/releases/latest/download/PageSystem.exe','download')">下载</button>
+    <div>
+        <h1>纯 <i>C++</i> 终端</h1>
+        <p>有系统信息、写入、删除等 6 种功能。</p>
+    </div>
     <script>
         document.addEventListener("contextmenu",(e) => {
             e.preventDefault();
