@@ -1,6 +1,18 @@
 # PageSystem
 突发奇想写的终端。大约 80 行代码，使用 C++ 标准库、Windows API。
-目前版本：V1.0.3
+目前版本：V1.0.3-1161
+
+## 预览
+```text
+========
+PageSystem V1.0.3-1161
+>>> print
+Content: Hello!
+Hello!
+>>> program
+Program name: notepad
+[启动成功]
+```
 
 ## 目前功能
 **1.** info ( 打印系统信息 ) 
@@ -15,10 +27,10 @@
 - **数据无价，谨慎操作！**
 - 下载功能依赖 **curl**，低版本 Windows **可能失效**。
 
-> [!WARNING]
-> program 功能需要提醒：**禁止输入带 &、| 等字符的命令！**
-> 如果攻击者发给您一串带 **&、| 等字符**的命令，此命令很可能包含**恶意 cmd 代码**！
-> 需要启动，请把带 **&、| 等字符**之后的内容、此字符和此字符前面的空格去除！并按回车启动正常软件（如 notepad.exe）
+> [!IMPORTANT]
+> 如果陌生人给您发来任何带 **|**、**&**、**&&** 等带有 **特殊符号** 的命令，请您一定不要执行它。
+> 攻击者很可能在这些符号的后面增加恶意代码，窃取您的隐私信息或植入后门木马、病毒。
+> **请勿输入不明来源的命令**。
 
 ## 调试与运行
 如需调试与运行，方法如下：
@@ -44,7 +56,7 @@ g++ -std=c++17 -g "main.cpp" -o "PageSystem.exe"
 ```bash
 taskkill /f /im PageSystem.exe
 g++ -g "main.cpp" -o "PageSystem.exe"
-# 旧版本 MINGW：g++ -std=c++17 -g "main.cpp" -o "PageSystem.exe"，高于 C++ 17 的版本也可以。
+# 旧版本 MinGW：g++ -std=c++17 -g "main.cpp" -o "PageSystem.exe"，高于 C++ 17 的版本也可以。
 ```
 如果还是不行，可能是**没有安装 MinGW 编译器**，下载就可以了（需要配置环境变量）。
 

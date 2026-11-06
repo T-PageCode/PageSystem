@@ -7,7 +7,7 @@ using namespace std;
 int main() {
     // System first code
     cout << "========" << endl;
-    cout << "PageSystem V1.0.3" << endl;
+    cout << "PageSystem V1.0.3-1161" << endl;
     string command;
     // Command
     while (true) {
@@ -31,7 +31,13 @@ int main() {
             getline(cin, name);
             // Cannot input |, &...!
             string cmd = "start " + name;
-            system(cmd.c_str());
+            int start = system(cmd.c_str());
+            if (start != 0) {
+                cout << "Failed to start program: " << name << "( Code: " << start << ")" << "." << endl;
+            }
+            else {
+                cout << "Program started: " << name << endl;
+            }
         }
         else if (command == "delete") {
             string delname;
@@ -49,13 +55,13 @@ int main() {
             cout << "Content: ";
             getline(cin, filecontent);
             file << filecontent << endl;
-            file.close();
-            if (!filesystem::exists(filename)) {
+            if (!file) {
                 cout << "Failed to create file: " << '"' << filename << '"' << "." << endl;
             }
             else {
                 cout << "Created file: " << '"' << filename << '"' << "." << endl;
             }
+            file.close();
         }
         else if (command == "download") {
             string downloadfilename;
