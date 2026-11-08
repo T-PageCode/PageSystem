@@ -33,7 +33,7 @@ int main() {
             string cmd = "start " + name;
             int start = system(cmd.c_str());
             if (start != 0) {
-                cout << "Failed to start program: " << name << "( Code: " << start << ")" << "." << endl;
+                cout << "Failed to start program: " << name << " ( Code: " << start << " )" << "." << endl;
             }
             else {
                 cout << "Program started: " << name << endl;
