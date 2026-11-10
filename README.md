@@ -1,18 +1,24 @@
 # PageSystem
 突发奇想写的终端。大约 80 行代码，使用 C++ 标准库、Windows API。
-目前版本：V1.0.3-1181
+目前版本：V1.0.4-11101
 
 ## 预览
 ```text
 ========
-PageSystem V1.0.3-1161
+PageSystem V1.0.4-11101
 >>> print
 Content: Hello!
 Hello!
 >>> program
 Program name: notepad
-[启动成功]
+[ 启动成功 ]
 ```
+## 容错判断
+目前加了一些容错逻辑，比如 program 的容错、write 的容错。
+### 重点
+- 防 Ctrl+Z 导致的无限输入 ( V1.0.4-11101+ ) 。
+- 防写入时创建失败，无文件导致的用户疑惑 ( V1.0.3+ ) 。
+- 防启动程序时启动失败，导致用户疑惑 [ Windows 已有容错 ] ( V1.0.3-1161+ ) 。
 
 ## 目前功能
 **1.** info ( 打印系统信息 ) 

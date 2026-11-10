@@ -2,17 +2,23 @@
 #include <iostream>
 #include <fstream>
 #include <filesystem>
+#include <windows.h>
 using namespace std;
 
 int main() {
     // System first code
     cout << "========" << endl;
-    cout << "PageSystem V1.0.3-1161" << endl;
+    cout << "PageSystem V1.0.4-11101" << endl;
     string command;
     // Command
     while (true) {
         cout << ">>> ";
-        getline(cin, command);
+        if (!getline(cin, command)) {
+            cout << "Getline error, Press Enter to exit..." << endl;
+            cin.clear();
+            cin.get();
+            break;
+        }
         if (command == "info") {
             cout << "System info:\nSystem name: PageSystem\nVersion: 1.0.3\nCopyright 2026 T-PageCode." << endl;
         }
