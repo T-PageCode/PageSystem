@@ -6,11 +6,14 @@
 using namespace std;
 
 int main() {
-    // System first code
+    // UTF-8
+    SetConsoleCP(65001);
+    SetConsoleOutputCP(65001);
+    // PageSystem version and ========
     cout << "========" << endl;
-    cout << "PageSystem V1.0.4-11101" << endl;
+    cout << "PageSystem V1.0.4-11141" << endl;
     string command;
-    // Command
+    // Command 
     while (true) {
         cout << ">>> ";
         if (!getline(cin, command)) {
@@ -47,10 +50,15 @@ int main() {
         }
         else if (command == "delete") {
             string delname;
-            cout << "Warning: Cannot delete chinese name file." << endl;
             cout << "File name: ";
             getline(cin, delname);
-            filesystem::remove(delname);
+            try {
+               filesystem::remove(delname);
+               cout << "Deleted file: " << delname << "." << endl; 
+            }
+            catch (const exception& e) {
+                cout << "Failed to delete file, info: " << e.what() << endl;
+            }
         }
         else if (command == "write") {
             string filename;
@@ -82,7 +90,7 @@ int main() {
             system(("curl -s -L -o " + downloadfilename + " " + downloadurl).c_str());
         }
         else {
-            cout << "Not found command: " << command << endl;
+            cout << "Command Not Found: " << command << endl;
         }
     }
     return 0;
