@@ -1,11 +1,11 @@
 # PageSystem
 突发奇想写的终端。大约 80 行代码，使用 C++ 标准库、Windows API。
-目前版本：V1.0.4-11101
+目前版本：V1.0.4-11141
 
 ## 预览
 ```text
 ========
-PageSystem V1.0.4-11101
+PageSystem V1.0.4-11141
 >>> print
 Content: Hello!
 Hello!
